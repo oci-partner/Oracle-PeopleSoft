@@ -1,0 +1,21 @@
+variable "displayName" {}
+variable "compartment_ocid" {}
+variable "AD" {
+    type = "list"
+}
+variable "instance_shape" {}
+variable "instance_image_ocid" {}
+variable "subNet_ocid" {}
+variable "initialCapacity" {}
+variable "maxCapacity" {}
+variable "minCapacity" {}
+variable "scaleUpCPUthreshold" {}
+variable "scaleInCPUthreshold" {}
+variable "backend_set_name" {}
+variable "load_balancer_id" {}
+//variable "backend_set_name2" {}
+//variable "load_balancer_id2" {}
+variable "port" {}
+variable "assign_public_ip" {}
+variable "enable_autoscaling_pools" {}
+variable "compute_ssh_public_key" {}
