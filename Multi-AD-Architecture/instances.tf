@@ -72,7 +72,7 @@ module "create_tools" {
     compute_boot_volume_size_in_gb = "${var.compute_boot_volume_size_in_gb}"
     assign_public_ip = "false"
 }
-/*
+
 module "create_db" {
     source  = "../modules/dbsystem"
 
@@ -93,7 +93,7 @@ module "create_db" {
     db_nls_characterset   = "${var.db_nls_characterset}"
     db_version            = "${var.db_version}"
     db_pdb_name           = "${var.db_pdb_name}"
-}*/
+}
 
 module "create_public_lb" {
     source  = "../modules/loadbalancer"
