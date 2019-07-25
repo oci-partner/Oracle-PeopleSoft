@@ -240,3 +240,4 @@ After executing terraform init, you can perform "terraform apply" to create your
 
 This sample created 58 resources on OCI tenant.
 
+This is end of the read me file ***********
