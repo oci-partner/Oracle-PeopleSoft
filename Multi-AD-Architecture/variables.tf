@@ -115,3 +115,9 @@ variable "enable_tools_module" {}
 variable "tools_instance_count" {}
 variable "tools_instance_shape" {}
 variable "tools_instance_listen_port" {}
+
+### elastic search module
+variable "enable_es_module" {}
+variable "es_instance_count" {}
+variable "es_instance_shape" {}
+variable "es_instance_listen_port" {}

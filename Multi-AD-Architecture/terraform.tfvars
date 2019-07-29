@@ -74,6 +74,12 @@ tools_instance_count = "1"
 tools_instance_shape = "VM.Standard2.2"
 tools_instance_listen_port = "3389"
 
+#elastic search tier
+enable_es_module = "true" // this variable enable or disable terraform tools module
+es_instance_count = "2"
+es_instance_shape = "VM.Standard2.2"
+es_instance_listen_port = "5000"
+
 ### Apps tier
 # Number of application instances to be created
 app_instance_count = "0" // if configured with "0" disable the creation of app instances for this terraform

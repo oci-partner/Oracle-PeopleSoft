@@ -73,6 +73,25 @@ module "create_tools" {
     assign_public_ip = "false"
 }
 
+module "create_elastic_search" {
+    source = "../modules/instance"
+
+    enable_module = "${var.enable_es_module}"
+    compartment_ocid = "${var.compartment_ocid}"
+    AD = "${var.AD}"
+    availability_domain = ["${data.template_file.deployment_ad.*.rendered}"]
+    fault_domain = ["${sort(data.template_file.deployment_fd.*.rendered)}"]
+    compute_instance_count = "${var.es_instance_count}"
+    compute_hostname_prefix = "${var.env_prefix}-elastic-search"
+    compute_image = "${data.oci_core_images.InstanceImageOCID.images.0.id}"
+    compute_instance_shape = "${var.es_instance_shape}"
+    compute_subnet = ["${module.create_appnet_subnet.subnetid}"]
+    compute_ssh_public_key = "${var.ssh_public_key}"
+    compute_boot_volume_size_in_gb = "${var.compute_boot_volume_size_in_gb}"
+    assign_public_ip = "false"
+}
+
+/*
 module "create_db" {
     source  = "../modules/dbsystem"
 
@@ -93,7 +112,7 @@ module "create_db" {
     db_nls_characterset   = "${var.db_nls_characterset}"
     db_version            = "${var.db_version}"
     db_pdb_name           = "${var.db_pdb_name}"
-}
+}*/
 
 module "create_public_lb" {
     source  = "../modules/loadbalancer"
